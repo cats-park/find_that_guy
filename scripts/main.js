@@ -126,7 +126,7 @@ startBtn.addEventListener("click", () => {
     } else {
         startSection.classList.add("none");
         countdownSection.classList.remove("none");
-        playScreenSection.classList.remove("none");
+        // playScreenSection.classList.remove("none");
 
         setImg();
 
@@ -141,10 +141,12 @@ startBtn.addEventListener("click", () => {
             } else {
                 // countdown,playScreen切り替え
                 countdownSection.classList.add("none");
-                // playScreenSection.classList.remove("none");
+                playScreenSection.classList.remove("none");
                 clearInterval(countdownFunc); // 終了
 
-                headerTitle.innerHTML = `${guyName}を探せ！`
+                headerTitle.innerHTML = `${guyName}を探せ！`;
+                // 開始時間をセット
+                beforeTime = Date.now();
             }
             countdownNum--;
         }, 500);
@@ -180,11 +182,6 @@ let setImg = () => {
     targetImage.style.height = `${imageHeight}px`;
     targetImage.style.top = `${targetImgTop}px`;
     targetImage.style.left = `${targetImgLeft}px`;
-
-    targetImage.addEventListener("load", () => {
-        // 開始時間をセット
-        beforeTime = Date.now();
-    });
 
     // 対象画像タッチ時
     targetImage.addEventListener("click", () => {
