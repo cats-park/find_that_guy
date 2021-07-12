@@ -1,3 +1,14 @@
 # 『あの人を探せ』
 
-## 作成中
+## 概要
+
+ウォーリーを探せのようなミニゲームです。
+
+## 以下、新しくやったこと
+
+- observer
+- SCSS
+
+## リンク
+
+https://anohito-calendar.jp/findGuys/
