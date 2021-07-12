@@ -7,10 +7,24 @@ TODO: コメント挿入
 
 @mixin shake() {
     display: inline-block;
-    animation: shake 2s infinite;
+    animation: shake 3s infinite;
 }
 
 @keyframes shake {
+    // @for $i from 0 through 100 {
+    //     @if ($i % 5) == 0 {
+    //         @if ($i % 10) !=0 {
+    //             #{$i}\% {
+    //                 transform: rotate(-10deg);
+    //             }
+    //         }
+    //         @else {
+    //             #{$i}\% {
+    //                 transform: rotate(10deg);
+    //             }
+    //         }
+    //     }
+    // }
     0% {
         transform: rotate(-10deg);
     }
