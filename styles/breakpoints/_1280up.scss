@@ -1,0 +1,48 @@
+/******************************************************************
+
+Stylesheet: 1280px以上のモニタで適用
+
+******************************************************************/
+
+@import "base";
+@import "960up";
+
+header {
+    border-bottom: 2px solid #333;
+}
+
+main {
+    height: calc(100vh - 20px);
+    padding-top: $headerHeight;
+}
+
+.start__section {
+    p {
+        margin-top: 70px;
+        margin-left: 30px;
+        font-size: 24px;
+    }
+
+    /* start__section__top共通部分 */
+    &__top {
+        & .find_girl {
+            width: 100px;
+            // margin-top: 100px;
+        }
+    }
+
+    &-1__inner,
+    &-2__inner,
+    &-3__inner {
+        border: 2px solid #333;
+        border-radius: 12px;
+    }
+
+    &-3__inner {
+        .start__section__bottom {
+            &__start-btn {
+                border: 2px solid #333;
+            }
+        }
+    }
+}

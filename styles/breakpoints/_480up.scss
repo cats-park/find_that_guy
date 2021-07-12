@@ -1,0 +1,45 @@
+/******************************************************************
+
+Stylesheet: 480px以上(スマホの横向き)のモニタで適用
+
+******************************************************************/
+
+@import "base";
+
+.start__section {
+    p {
+        margin-left: 20px;
+        font-size: 14px;
+    }
+
+    /* start__section__top共通部分 */
+    &__top {
+        margin: auto;
+        margin-bottom: 20px;
+        display: flex;
+    }
+
+    &-2__inner {
+        & #select-guy-group {
+            grid-gap: 14px;
+        }
+    }
+
+    &-3__inner {
+        .start__section__bottom {
+            &__start-btn {
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.result__section {
+    &__reload-btn {
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        font-size: 20px;
+    }
+}

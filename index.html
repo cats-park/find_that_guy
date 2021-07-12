@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>あの人を探せ！</title>
+    <meta name="description" content="簡単なゲームです。あの人を探してください！">
+    <!-- 古いIE用 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- サイトアイコン（16*16） -->
+    <link rel="icon" href="images/favicon.png" sizes="16x16" type="image/png">
+    <!-- スマホ用アイコン画像（150*150） -->
+    <link rel="apple-touch-icon-precomposed" href="images/favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="styles/vendors/flickitys/flickity.css">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- アイコン -->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+    <!-- GOOGLE FONT -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157258121-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-157258121-1');
+    </script>
+
+    <!-- ADOBE の FONT -->
+    <script src="https://use.typekit.net/fya1swr.js"></script>
+    <script>
+        try {
+            Typekit.load({
+                async: true
+            });
+        } catch (e) {}
+    </script>
+</head>
+
+<body>
+    <header>
+        <a href="http://anohito-calendar.jp" target="_blank">
+            <h1 class="header__title">あの人を探せ！</h1>
+        </a>
+    </header>
+    <main>
+        <!-- スタート画面 -->
+        <section class="start__section wrapper">
+            <!-- 1/3 -->
+            <div class="start__section-1">
+                <div class="start__section-1__inner">
+                    <div class="start__section__top">
+                        <img src="images/1646_mono_ye.png" alt="探している女性" class="find_girl">
+                        <p>
+                            画面内に隠れている『あの人』を探せ。<br>
+                            <br>
+                            <span class="rule">-ルール-<br></span>
+                            <span class="no-wrap">
+                                ページ内にいる『あの人』を探して
+                            </span>
+                            <span class="no-wrap">
+                                タップしてください。
+                            </span>
+                            <br>
+                            早く見つけると高得点になります。
+                        </p>
+                    </div>
+                    <div class="start__section__bottom">
+                        <div class="animation-ball--wrap">
+                            <div class="slide-ball"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 2/3 -->
+            <div class="start__section-2">
+                <div class="start__section-2__inner">
+                    <div class="start__section__top">
+                        <img src="images/1646_mono_ye.png" alt="探している女性" class="find_girl">
+                        <p>
+                            <span class="no-wrap">
+                                『あの人』を選択して
+                            </span>
+                            <span class="no-wrap">
+                                次へ進んでください。
+                            </span>
+                        </p>
+                    </div>
+                    <div class="start__section__bottom">
+                        <ul id="select-guy-group">
+                        </ul>
+                        <div class="animation-ball--wrap">
+                            <div class="slide-ball"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 3/3 -->
+            <div class="start__section-3">
+                <div class="start__section-3__inner">
+                    <div class="start__section__top">
+                        <img src="images/1646_mono_ye.png" alt="探している女性" class="find_girl">
+                        <p>
+                            [START]ボタンを押すと開始されます。
+                        </p>
+                    </div>
+                    <div class="start__section__bottom">
+                        <button class="start__section__bottom__start-btn">START</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- カウントダウン -->
+        <section class="countdown__section none">
+            <div class="countdown__section__num">
+            </div>
+        </section>
+
+        <!-- ゲーム画面 -->
+        <section class="play_screen__section none">
+            <!-- ここに背景画像 -->
+            <div></div>
+        </section>
+        <!-- 結果画面 -->
+        <section class="result__section wrapper none">
+            <h2 class="result__section__title">~ 結果 ~</h2>
+            <div class="result__section__point">
+            </div>
+            <div class="result__section__share">
+                <p>↓　シェアする　↓</p>
+                <a class="result__section__share_link" href="https://twitter.com/anohito_ca" target="">
+                    <img src="images/twitter-brands.svg" alt="">
+                </a>
+                <p>↑　シェアする　↑</p>
+            </div>
+            <button class="result__section__reload-btn" type="button" name="button" onclick="window.location.reload();">もう一度遊ぶ</button>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-inner wrapper">
+            <small>&copy;2021 あの人かれんだー</small>
+        </div>
+    </footer>
+
+    <!-- JavaScriptの読み込み -->
+    <script src="scripts/config.js"></script>
+    <script src="scripts/vendors/flickitys/flickity.pkgd.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+/******************************************************************
+
+Stylesheet: 960px以上のモニタで適用
+
+******************************************************************/
+
+@import "base";
+@import "600up";
+
+header {
+    .header__title {
+        text-align: center;
+        font-size: 32px;
+    }
+}
+
+main {
+    padding-top: $headerHeight;
+}
+
+.start__section {
+    p {
+        margin-left: 30px;
+        font-size: 20px;
+    }
+
+    .rule {
+        font-size: 1.3em;
+    }
+
+    /* start__section__top共通部分 */
+    &__top {
+        margin-bottom: 30px;
+
+        & .find_girl {
+            width: 100px;
+        }
+    }
+
+    &-2__inner,
+    &-3__inner {
+        .start__section__top {
+            & p {
+                margin-top: 90px;
+            }
+        }
+    }
+
+    &-2__inner {
+        & #select-guy-group {
+            grid-gap: 20px;
+        }
+    }
+
+    &-3__inner {
+        .start__section__bottom {
+            &__start-btn {
+                padding: 1.5rem 1.5rem;
+                border-radius: 12px;
+                font-weight: 600;
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+.result__section {
+    margin-top: 100px;
+    border: 2px solid #333;
+    border-radius: 10px;
+
+    & h2 {
+        margin-top: 40px;
+        font-size: 32px;
+    }
+
+    & .result__section__share {
+        margin: 40px auto 80px auto;
+    }
+
+    & .result__section__share_link {
+        margin: 40px 0;
+
+        & img {
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    & .point {
+        margin-top: 40px;
+        font-size: 32px;
+    }
+}

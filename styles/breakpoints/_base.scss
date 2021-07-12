@@ -1,0 +1,385 @@
+/******************************************************************
+
+Stylesheet: ベーススタイル
+
+******************************************************************/
+
+/* Headerの高さ */
+$headerHeight : 60px;
+/* Footerの高さ */
+$footerHeight : 20px;
+
+$cAnohitoRed : #FF6070;
+
+html {
+	font-size: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: "ten-mincho", serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 18px;
+	color: #333;
+	width: 100%;
+}
+
+img {
+	max-width: 100%;
+	vertical-align: bottom;
+}
+
+.font-sm {
+	font-size: 11px;
+}
+
+.font-md {
+	font-size: 17px;
+}
+
+.font-lr {
+	font-size: 17px;
+}
+
+.font-lg {
+	font-size: 25px;
+}
+
+.mb-sm {
+	margin-bottom: 16px !important;
+}
+
+.mb-lg {
+	margin-bottom: 80px !important;
+}
+
+.pb-sm {
+	padding-bottom: 16px !important;
+}
+
+.pb-lg {
+	padding-bottom: 80px !important;
+}
+
+.wrapper {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.none {
+	display: none;
+}
+
+.red-word {
+	color: $cAnohitoRed !important;
+	font-weight: 700;
+}
+
+.wrapper {
+	width: 90%;
+	max-width: 1024px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	color: #333;
+}
+
+.no-wrap {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+}
+
+header {
+	top: 0;
+	height: $headerHeight;
+	width: 100%;
+	position: fixed;
+	border-bottom: 1px solid #333;
+	background-color: #fff;
+	z-index: 2;
+
+	.header__title {
+		margin-left: 20px;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 26px;
+		line-height: $headerHeight;
+	}
+}
+
+main {
+	width: 100%;
+	height: calc(100vh - 20px);
+	padding-top: $headerHeight;
+	outline: none;
+}
+
+.start__section {
+	max-width: 720px;
+	height: 100%;
+
+	p {
+		display: inline-block;
+		width: auto;
+		text-align: left;
+		margin-top: 50px;
+		margin-left: 10px;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 11px;
+		line-height: 1.5em;
+	}
+
+	.rule {
+		font-size: 1.3em;
+	}
+
+	/* start__section__top共通部分 */
+	&__top {
+		display: inline-block;
+		text-align: center;
+		margin: auto;
+		width: 90%;
+		margin-bottom: 20px;
+		display: flex;
+
+		& .find_girl {
+			width: 60px;
+			height: 100%;
+			margin-top: 50px;
+		}
+	}
+
+	&__bottom {
+		width: 90%;
+		margin: auto;
+
+		.animation-ball--wrap {
+			position: relative;
+
+			& .slide-ball {
+				position: absolute;
+				@include slide-ball(#333, 30px);
+			}
+		}
+	}
+
+	& .flickity-slider {
+		height: 100%;
+	}
+
+	&-1,
+	&-2,
+	&-3 {
+		width: 100%;
+		height: 100%;
+		padding: 15% 0;
+		margin: auto 5%;
+		overflow: scroll;
+		touch-action: pan-y;
+	}
+
+	&-1__inner,
+	&-2__inner,
+	&-3__inner {
+		border: 1px solid #333;
+		border-radius: 5px;
+		padding-bottom: 50px;
+	}
+
+	&-2__inner,
+	&-3__inner {
+		.start__section__top {
+			& p {
+				margin-top: 70px;
+			}
+		}
+	}
+
+	&-2__inner {
+		& #select-guy-group {
+			width: 90%;
+			margin: auto;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-gap: 10px;
+		}
+
+		// ラジオボタン非表示にする
+		input[type="radio"] {
+			display: none;
+		}
+
+		/* 画像部分に余白を持たせる(線の太さ) */
+		label {
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			padding: 3px;
+
+			& div {
+				background-color: #fff;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			// TODO: 画像の位置要調整
+			& img {
+				width: 80%;
+				margin: auto;
+			}
+		}
+
+		/* 選択されたラジオボタンの画像の背景を変える */
+		input[type="radio"]:checked+label {
+			background: $cAnohitoRed;
+		}
+	}
+
+	&-3__inner {
+		.start__section__bottom {
+			position: relative;
+
+			&__start-btn {
+				margin-top: 20px;
+				padding: 0.5rem 1rem;
+				border: 1px solid #333;
+				border-radius: 5px;
+				box-shadow: 3px 3px #888;
+
+				&:hover {
+					box-shadow: 1px 1px #888;
+				}
+			}
+		}
+	}
+}
+
+.countdown__section {
+	// display: none;
+	height: 100%;
+	position: relative;
+
+	&__num {
+		font-size: 54px;
+		// text-align: center;
+		// vertical-align: middle;
+		position: absolute;
+		top: 50%;
+		/*親要素を起点に上から50%*/
+		left: 50%;
+		/*親要素を起点に左から50%*/
+		transform: translateY(-50%) translateX(-50%);
+		/*要素の大きさの半分ずつを戻す*/
+	}
+}
+
+.play_screen__section {
+	width: 100%;
+	height: 100%;
+	overflow: scroll;
+
+	&::-webkit-scrollbar {
+		width: 0.5em;
+		height: 0.5em;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: linear-gradient(0deg, #9ed8ed, #66aff9);
+		border-radius: 2px;
+	}
+	&::-webkit-scrollbar-track {
+		opacity: .2;
+	}
+
+	& div {
+		position: relative;
+		background-repeat: repeat;
+
+		& .target-image {
+			position: absolute;
+		}
+	}
+}
+
+.result__section {
+	// display: none;
+	max-width: 720px;
+	height: auto;
+	margin-top: 70px;
+	border: 1px solid #333;
+	border-radius: 5px;
+
+	&__title {
+		margin-top: 30px;
+		font-size: 24px;
+	}
+
+	&__share {
+		margin: 20px auto 50px auto;
+
+		& p {
+			font-size: 16px;
+		}
+
+		&_link {
+			margin: 20px 0;
+
+			& img {
+				width: 50px;
+				height: 50px;
+				@include shake();
+			}
+		}
+	}
+
+	& .point {
+		margin-top: 30px;
+		font-size: 24px;
+	}
+
+	&__reload-btn {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		padding: 0.5rem 1rem;
+		border: 1px solid #333;
+		border-radius: 5px;
+		box-shadow: 3px 3px #888;
+
+		&:hover {
+			box-shadow: 1px 1px #888;
+		}
+	}
+}
+
+footer {
+	width: 100%;
+	height: $footerHeight;
+	// position: relative;
+	border-top: 1px solid #333;
+	position: fixed;
+	bottom: 0;
+	background-color: #fff;
+	z-index: 2;
+
+	& small {
+		line-height: $footerHeight;
+	}
+}

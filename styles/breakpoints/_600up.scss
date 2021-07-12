@@ -1,0 +1,140 @@
+/******************************************************************
+
+Stylesheet: 600px以上のタブレットやモニタで適用
+
+******************************************************************/
+
+
+@import "base";
+@import "480up";
+
+/* Headerの高さ */
+$headerHeight : 80px;
+/* Footerの高さ */
+$footerHeight : 40px;
+
+header {
+    height: $headerHeight;
+
+    .header__title {
+        margin-left: 20px;
+        font-size: 32px;
+        line-height: $headerHeight;
+    }
+}
+
+main {
+    padding-top: $headerHeight;
+    height: calc(100vh - 40px);
+}
+
+.start__section {
+    p {
+        margin-top: 60px;
+        margin-left: 20px;
+        font-size: 16px;
+    }
+
+    /* start__section__top共通部分 */
+    &__top {
+        & .find_girl {
+            width: 80px;
+            margin-top: 60px;
+        }
+    }
+
+    &-1__inner,
+    &-2__inner,
+    &-3__inner {
+        padding-bottom: 60px;
+    }
+
+    &-2__inner,
+    &-3__inner {
+        .start__section__top {
+            & p {
+                margin-top: 80px;
+            }
+        }
+    }
+
+    &-2__inner {
+        & #select-guy-group {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 16px;
+        }
+    }
+
+    &-3__inner {
+        .start__section__bottom {
+            &__start-btn {
+                padding: 2rem 2rem;
+                border-radius: 12px;
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+.countdown__section {
+    height: 100%;
+    position: relative;
+
+    &__num {
+        font-size: 54px;
+        position: absolute;
+        top: 50%;
+        /*親要素を起点に上から50%*/
+        left: 50%;
+        /*親要素を起点に左から50%*/
+        transform: translateY(-50%) translateX(-50%);
+        /*要素の大きさの半分ずつを戻す*/
+    }
+}
+
+.result__section {
+    margin-top: 70px;
+    border: 1px solid #333;
+    border-radius: 5px;
+
+    & h2 {
+        margin-top: 40px;
+        font-size: 28px;
+    }
+
+    & .result__section__share {
+        margin: 30px auto 60px auto;
+
+        & p {
+            font-size: 24px;
+        }
+    }
+
+    & .result__section__share_link {
+        margin: 30px 0;
+
+        & img {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    & .point {
+        font-size: 28px;
+    }
+
+    &__reload-btn {
+        padding: 2rem 2rem;
+        border-radius: 12px;
+        font-size: 24px;
+    }
+}
+
+footer {
+    height: $footerHeight;
+
+    small {
+        line-height: $footerHeight;
+        font-size: 12px;
+    }
+}
